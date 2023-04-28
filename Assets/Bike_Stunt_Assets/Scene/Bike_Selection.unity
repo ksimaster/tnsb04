@@ -237,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.5, y: -6}
+  m_AnchoredPosition: {x: 8.3, y: -0.8}
   m_SizeDelta: {x: 341.4572, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &11492665
@@ -1671,7 +1671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.5, y: -6}
+  m_AnchoredPosition: {x: 8.3, y: -0.8}
   m_SizeDelta: {x: 341.4572, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &239944438
@@ -3022,14 +3022,14 @@ RectTransform:
   m_GameObject: {fileID: 366601925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.45, y: 1.45, z: 1}
   m_Children: []
   m_Father: {fileID: 1704485401}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -400, y: -64.688}
+  m_AnchoredPosition: {x: 431, y: -56.5}
   m_SizeDelta: {x: 313, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366601927
@@ -6912,7 +6912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.5, y: -6}
+  m_AnchoredPosition: {x: 8.3, y: -0.8}
   m_SizeDelta: {x: 341.4572, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711510700
@@ -7156,7 +7156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.5, y: -6}
+  m_AnchoredPosition: {x: 8.3, y: -0.8}
   m_SizeDelta: {x: 341.4572, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773246098
@@ -12221,6 +12221,7 @@ GameObject:
   - component: {fileID: 1117041332}
   - component: {fileID: 1117041331}
   - component: {fileID: 1117041334}
+  - component: {fileID: 1117041335}
   m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
@@ -12509,6 +12510,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1117041335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117041329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1128715275
 GameObject:
   m_ObjectHideFlags: 0
@@ -13290,6 +13306,7 @@ GameObject:
   - component: {fileID: 1156362116}
   - component: {fileID: 1156362115}
   - component: {fileID: 1156362118}
+  - component: {fileID: 1156362119}
   m_Layer: 5
   m_Name: Left
   m_TagString: Untagged
@@ -13578,6 +13595,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1156362119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156362113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1161818236
 GameObject:
   m_ObjectHideFlags: 0
@@ -21646,7 +21678,7 @@ MonoBehaviour:
   - {fileID: 711510698}
   - {fileID: 773246096}
   - {fileID: 239944436}
-  NotEnoughMoney: {fileID: 879220144}
+  NotEnoughMoney: {fileID: 0}
   Prices: e8030000d0070000b80b000088130000
   currentBike: 0
   stats:
