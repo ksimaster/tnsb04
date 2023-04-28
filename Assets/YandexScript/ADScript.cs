@@ -11,7 +11,8 @@ public class ADScript : MonoBehaviour
     //public float rewardBonusSliderFuel;
     //public float lowBalanceFuel;
     public string nameScene;
-    public GameObject PanelDeath;
+    public GameObject panelLoose;
+    public GameObject panelWin;
     private int i;
     public void ShareFriend(){
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -52,13 +53,13 @@ public class ADScript : MonoBehaviour
     {
         CheckAds();
         //if (sliderHome.value <= sliderHome.minValue) ShowAdInterstitial();
-        /*
-        if (PanelDeath.activeSelf && i == 0) 
+        
+        if ((panelLoose.activeSelf || panelWin.activeSelf) && i == 0) 
         {
             i++;
             ShowAdInterstitial();
         } 
-        */
+        
     }
     private void OnApplicationFocus(bool focus)
     {
