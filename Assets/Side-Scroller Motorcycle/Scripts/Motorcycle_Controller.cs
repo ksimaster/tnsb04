@@ -227,10 +227,61 @@ public class Motorcycle_Controller : MonoBehaviour
             }
         }
     }
+    public void Keys()
+    {
+        //keys keyboard
+        // keys DOWN-----------------------------
+        // Right DOWN
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        {
+            Right();
+            LeftOrRight();
+        }
+        // Left DOWN
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
+            Left();
+            LeftOrRight();
+        }
+        //throttle or Gas DOWN
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            Accelerate();
+        }
+        // brake DOWN
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Space))
+        {
+            Brake();
+        }
 
+        // keys UP----------------------------------
+        // Right UP
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
+        {
+            Right_Off();
+            LeftOrRight_Off();
+        }
+        // Left UP
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
+        {
+            Left_Off();
+            LeftOrRight_Off();
+        }
+        //throttle or Gas UP
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            Accelerate_Off();
+        }
+        // brake UP
+        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.Space))
+        {
+            Brake_Off();
+        }
+    }
     //  Update is called once per frame
     void Update()
     {
+        Keys();
         if (isControllable)
         {
             if (forMobile)
@@ -394,6 +445,10 @@ public class Motorcycle_Controller : MonoBehaviour
     //physics are calculated in FixedUpdate function
     void FixedUpdate()
     {
+        
+
+
+
         if (isControllable)
         {
             if (accelerate)
