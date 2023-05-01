@@ -31,7 +31,18 @@
     
     function showAdReward() {
       console.log('show Ad Reward');
-      sdk.adv.showRewardedVideo({callbacks:{}});
+      sdk.adv.showRewardedVideo({
+      	callbacks:{
+      	onClose: function(wasShown) {
+          // some action after close
+          isAds = 'off';
+        },
+        onOpen: function() {
+          // some action on open
+          isAds = 'on';
+        }
+      	}
+      });
     }
   </script>
   <div id="unity-container" class="unity-desktop">

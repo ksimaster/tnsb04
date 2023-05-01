@@ -13,6 +13,9 @@ public class ADScript : MonoBehaviour
     public string nameScene;
     public GameObject panelLoose;
     public GameObject panelWin;
+    //public GameObject panelReward;
+    public Text textCoin;
+    private int coin;
     private int i;
     public void ShareFriend(){
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -30,6 +33,10 @@ public class ADScript : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
     	WebGLPluginJS.RewardFunction();
 #endif
+       // panelReward.SetActive(true);
+        coin = int.Parse(textCoin.text);
+        coin += 500;
+        textCoin.text = coin.ToString();
        // sliderHome.value += rewardBonusSliderHome;
     	//if(sliderFuelCar.value<=lowBalanceFuel) sliderFuelCar.value += rewardBonusSliderFuel;
     }
