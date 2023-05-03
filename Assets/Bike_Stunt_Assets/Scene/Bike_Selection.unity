@@ -212,7 +212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 3000
 --- !u!222 &4762455
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1719,7 +1719,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5000
+  m_Text: 15000
 --- !u!222 &239944439
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6960,7 +6960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2000
+  m_Text: 6000
 --- !u!222 &711510701
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7204,7 +7204,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3000
+  m_Text: 9000
 --- !u!222 &773246099
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22384,7 +22384,7 @@ MonoBehaviour:
   - {fileID: 773246096}
   - {fileID: 239944436}
   NotEnoughMoney: {fileID: 0}
-  Prices: e8030000d0070000b80b000088130000
+  Prices: b80b00007017000028230000983a0000
   currentBike: 0
   stats:
   - {fileID: 528680231}
