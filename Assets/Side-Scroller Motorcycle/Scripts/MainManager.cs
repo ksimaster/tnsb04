@@ -74,6 +74,7 @@ public class MainManager : MonoBehaviour
     public void LoadUserData()
     {
         string path = Application.persistentDataPath + "/savefile.json";
+        //Debug.Log("путь: " + path);
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
