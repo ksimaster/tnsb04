@@ -102,6 +102,7 @@ public class MainManager : MonoBehaviour
             SaveUserData();
             PlayerPrefs.SetInt("ShowReward", 0);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
         }   
     }
     private void Update()

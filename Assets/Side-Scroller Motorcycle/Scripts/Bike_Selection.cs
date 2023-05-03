@@ -20,12 +20,14 @@ public class Bike_Selection : MonoBehaviour
 
     void Start()
     {
-        for(int j = 0; j < 4; j++)
+        MainManager.Instance.LoadUserData();
+        for (int j = 0; j < 4; j++)
         {
             if(MainManager.Instance.Purchased_Bikes[j] != 0)
             {
                 Buy_Button.SetActive(false);
                 Select_Button.SetActive(true);
+               // Debug.Log("мото № " + j + " куплен");
             }
             else
             {
@@ -39,32 +41,38 @@ public class Bike_Selection : MonoBehaviour
 
     void Update()
     {
-        for (int j = 0; j < 4/*MainManager.Instance.Purchased_Bikes.Length*/; j++)
-        {
-            //Debug.Log("Loop executing time" + j);
-            if (currentBike > 0 && MainManager.Instance.Purchased[currentBike - 1] == false && MainManager.Instance.Purchased_Bikes[j] == 0)
-            {
-                Buy_Button.SetActive(true);
-                Select_Button.SetActive(false);
-
-                for (int i = 0; i < Purchase_Texts.Length; i++)
+      
+                if (currentBike>0 && MainManager.Instance.Purchased[currentBike - 1] == false && MainManager.Instance.Purchased_Bikes[currentBike - 1] == 0)
                 {
-                    if (i == currentBike - 1)
+                    Buy_Button.SetActive(true);
+                    Select_Button.SetActive(false);
+
+                    for (int i = 0; i < Purchase_Texts.Length; i++)
                     {
-                        Purchase_Texts[i].SetActive(true);
-                    }
-                    else
-                    {
-                        Purchase_Texts[i].SetActive(false);
+                        if (i == currentBike - 1)
+                        {
+                            Purchase_Texts[i].SetActive(true);
+                        }
+                        else
+                        {
+                            Purchase_Texts[i].SetActive(false);
+                        }
                     }
                 }
-            }
-            else
-            {
-                Buy_Button.SetActive(false);
-                Select_Button.SetActive(true);
-            }
+                else
+                {
+                    Buy_Button.SetActive(false);
+                    Select_Button.SetActive(true);
+                    // Debug.Log("мото № " + j + " куплен");
+                }
+       /* if (currentBike == 0)
+        {
+            Buy_Button.SetActive(false);
+            Select_Button.SetActive(true);
         }
+         */   
+        
+        
     }
 
     public void Left_Bike()
