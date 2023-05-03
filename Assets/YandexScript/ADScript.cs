@@ -34,11 +34,15 @@ public class ADScript : MonoBehaviour
     	WebGLPluginJS.RewardFunction();
 #endif
        // panelReward.SetActive(true);
+       /*
         coin = int.Parse(textCoin.text);
         coin += 500;
         textCoin.text = coin.ToString();
-       // sliderHome.value += rewardBonusSliderHome;
-    	//if(sliderFuelCar.value<=lowBalanceFuel) sliderFuelCar.value += rewardBonusSliderFuel;
+        */
+        PlayerPrefs.SetInt("ShowReward", 1);
+
+        // sliderHome.value += rewardBonusSliderHome;
+        //if(sliderFuelCar.value<=lowBalanceFuel) sliderFuelCar.value += rewardBonusSliderFuel;
     }
 
     //Change language

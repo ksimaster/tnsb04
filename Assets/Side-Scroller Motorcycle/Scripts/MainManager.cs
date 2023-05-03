@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class MainManager : MonoBehaviour
     public bool[] Purchased = new bool[4];
 
     public bool GameSounds = true;
+    public int afterRewardCoins = 0;
 
     private void Awake()
     {
@@ -88,5 +90,21 @@ public class MainManager : MonoBehaviour
                 Purchased[i] = data.purchased[i];
             }
         }
+    }
+
+    public void SetRewardCoins()
+    {
+        if (PlayerPrefs.GetInt("ShowReward") == 1)
+        {
+            LoadUserData();
+            Coins += 500;
+            SaveUserData();
+            PlayerPrefs.SetInt("ShowReward", 0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }   
+    }
+    private void Update()
+    {
+        SetRewardCoins();
     }
 }
