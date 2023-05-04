@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ADScript : MonoBehaviour
 {
@@ -15,8 +16,37 @@ public class ADScript : MonoBehaviour
     public GameObject panelWin;
     //public GameObject panelReward;
     public Text textCoin;
+    public TMP_Text adsWinText;
+    public TMP_Text adsLoseText;
+    public Button restartWin;
+    public Button nextWin;
+    public Button restartLose;
+    public Button outScene;
     private int coin;
     private int i;
+
+    IEnumerator Pause()
+    {
+        restartWin.gameObject.SetActive(false);
+        nextWin.gameObject.SetActive(false);
+        restartLose.gameObject.SetActive(false);
+        outScene.gameObject.SetActive(false);
+        adsWinText.text = "Реклама начнется через 3 секунды";
+        adsLoseText.text = "Реклама начнется через 3 секунды";
+        yield return new WaitForSeconds(1f);
+        adsWinText.text = "Реклама начнется через 2 секунды";
+        adsLoseText.text = "Реклама начнется через 2 секунды";
+        yield return new WaitForSeconds(1f);
+        adsWinText.text = "Реклама начнется через 1 секунду";
+        adsLoseText.text = "Реклама начнется через 1 секунду";
+        yield return new WaitForSeconds(1f);
+        adsWinText.text = "";
+        adsLoseText.text = "";
+        restartWin.gameObject.SetActive(true);
+        nextWin.gameObject.SetActive(true);
+        restartLose.gameObject.SetActive(true);
+        outScene.gameObject.SetActive(true);
+    }
     public void ShareFriend(){
 #if UNITY_WEBGL && !UNITY_EDITOR
         WebGLPluginJS.ShareFunction();
@@ -24,6 +54,14 @@ public class ADScript : MonoBehaviour
     }
 
     public void ShowAdInterstitial(){
+#if UNITY_WEBGL && !UNITY_EDITOR
+    	WebGLPluginJS.InterstitialFunction();
+#endif
+    }
+
+    public void ShowAdInterstitialLogPause()
+    {
+        StartCoroutine("Pause");
 #if UNITY_WEBGL && !UNITY_EDITOR
     	WebGLPluginJS.InterstitialFunction();
 #endif
@@ -68,7 +106,7 @@ public class ADScript : MonoBehaviour
         if ((panelLoose.activeSelf || panelWin.activeSelf) && i == 0) 
         {
             i++;
-            ShowAdInterstitial();
+            ShowAdInterstitialLogPause();
         } 
         
     }
