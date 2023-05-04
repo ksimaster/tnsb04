@@ -23,7 +23,7 @@ public class MainManager : MonoBehaviour
     public bool[] Purchased = new bool[4];
 
     public bool GameSounds = true;
-    public int afterRewardCoins = 0;
+    //public Text coinText;
 
     private void Awake()
     {
