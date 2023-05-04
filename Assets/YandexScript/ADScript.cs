@@ -40,12 +40,21 @@ public class ADScript : MonoBehaviour
         adsWinText.text = "Реклама начнется через 1 секунду";
         adsLoseText.text = "Реклама начнется через 1 секунду";
         yield return new WaitForSeconds(1f);
+#if UNITY_WEBGL && !UNITY_EDITOR
+    	WebGLPluginJS.InterstitialFunction();
+#endif
         adsWinText.text = "";
         adsLoseText.text = "";
         restartWin.gameObject.SetActive(true);
         nextWin.gameObject.SetActive(true);
         restartLose.gameObject.SetActive(true);
         outScene.gameObject.SetActive(true);
+    }
+    IEnumerator MicroPause()
+    {
+        
+        yield return new WaitForSeconds(0.3f);
+        
     }
     public void ShareFriend(){
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -62,9 +71,7 @@ public class ADScript : MonoBehaviour
     public void ShowAdInterstitialLogPause()
     {
         StartCoroutine("Pause");
-#if UNITY_WEBGL && !UNITY_EDITOR
-    	WebGLPluginJS.InterstitialFunction();
-#endif
+
     }
 
     public void ShowAdReward(){
@@ -105,7 +112,8 @@ public class ADScript : MonoBehaviour
         
         if ((panelLoose.activeSelf || panelWin.activeSelf) && i == 0) 
         {
-            i++;
+           // StartCoroutine("MicroPause");
+            i+=1;
             ShowAdInterstitialLogPause();
         } 
         
