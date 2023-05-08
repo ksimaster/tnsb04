@@ -49,6 +49,21 @@ mergeInto(LibraryManager.library, {
       stringToUTF8(isAd, bufferAd, bufferSizeAd);
       return bufferAd;
    },
+      // Function GetTypeDevice(add ksimaster)
+   GetTypeDevice: function () {
+      //var player;
+      var isDesktop = "no";
+        if ( isDevice === 'desktop') 
+        {
+          console.log('Device = desktop' );
+          isDesktop = "yes";
+         }
+     
+      var bufferSizeDevice = lengthBytesUTF8(isDesktop) + 1;
+      var bufferDevice = _malloc(bufferSizeDevice);
+      stringToUTF8(isDesktop, bufferDevice, bufferSizeDevice);
+      return bufferDevice;
+   },
    // Function InterstitialFunction (add ksimaster)
    InterstitialFunction: function () {
       // Show a message as an alert

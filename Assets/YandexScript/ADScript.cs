@@ -15,7 +15,7 @@ public class ADScript : MonoBehaviour
     public GameObject panelLoose;
     public GameObject panelWin;
     //public GameObject panelReward;
-    public Text textCoin;
+   // public Text textCoin;
     public TMP_Text adsWinText;
     public TMP_Text adsLoseText;
     public Button restartWin;
