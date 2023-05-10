@@ -39,7 +39,7 @@ public class Scene_Manager : MonoBehaviour
 
     public void Like_Us()
     {
-        Application.OpenURL("https://play.google.com/store/apps/dev?id=5360866347787636750");
+        //Application.OpenURL("https://play.google.com/store/apps/dev?id=5360866347787636750");
     }
 
     private void Update()
