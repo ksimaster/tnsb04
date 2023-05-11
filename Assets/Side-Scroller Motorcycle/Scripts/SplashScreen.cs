@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SplashScreen : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class SplashScreen : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1.5f);
-        Application.LoadLevel("Main_Menu");
+        //Application.LoadLevel("Main_Menu");
+        SceneManager.LoadScene("Main_Menu");
         // Do something after the loading is complete, such as loading the next scene or enabling the game controls.
     }
 }

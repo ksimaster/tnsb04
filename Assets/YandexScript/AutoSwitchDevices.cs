@@ -5,11 +5,17 @@ using UnityEngine;
 public class AutoSwitchDevices : MonoBehaviour
 {
     public GameObject TouchControls;
-    private int i = 0;
+    //private int i = 0;
+
+    private void Start()
+    {
+        PlayerPrefs.SetInt("desktop", 0);
+        CheckDevice();
+    }
 
     private void Update()
     {
-            CheckDevice(); 
+        if(PlayerPrefs.GetInt("desktop") == 1) TouchControls.SetActive(false);
     }
 
     public void CheckDevice()
@@ -19,6 +25,8 @@ public class AutoSwitchDevices : MonoBehaviour
         {
             //desktop
             TouchControls.SetActive(false);
+            PlayerPrefs.SetInt("desktop", 1);
+
         }
         else
         {

@@ -48,7 +48,8 @@ public class LevelManager : MonoBehaviour
 
     public void ReloadLevel()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        //Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void NextLevel()
@@ -78,7 +79,8 @@ public class LevelManager : MonoBehaviour
 
     public void Bike_Selection()
     {
-        Application.LoadLevel("Bike_Selection");
+        //Application.LoadLevel("Bike_Selection");
+        SceneManager.LoadScene("Bike_Selection");
     }
 
     public void Exit_Game()
@@ -89,7 +91,8 @@ public class LevelManager : MonoBehaviour
 
     public void Main_Menu()
     {
-        Application.LoadLevel("Main_Menu");
+        //Application.LoadLevel("Main_Menu");
+        SceneManager.LoadScene("Main_Menu");
     }
 
     //public void Unlock_Next_Level()

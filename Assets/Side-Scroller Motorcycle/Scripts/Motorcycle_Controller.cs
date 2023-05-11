@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Motorcycle_Controller : MonoBehaviour
 {
@@ -427,7 +428,8 @@ public class Motorcycle_Controller : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.R) || (Input.touchCount >= 2 && Input.GetTouch(0).phase == TouchPhase.Began)) && crashed)
         {
             score = 0;
-            Application.LoadLevel(Application.loadedLevel);
+            //Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (Checkpoint.lastPoint)

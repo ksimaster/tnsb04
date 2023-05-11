@@ -18,7 +18,8 @@ public class Scene_Manager : MonoBehaviour
 
     public void Bike_Selection()
     {
-        Application.LoadLevel("Bike_Selection");
+        //Application.LoadLevel("Bike_Selection");
+        SceneManager.LoadScene("Bike_Selection");
     }
 
     public void Exit_Game()
@@ -29,12 +30,14 @@ public class Scene_Manager : MonoBehaviour
 
     public void Main_Menu()
     {
-        Application.LoadLevel("Main_Menu");
+        //Application.LoadLevel("Main_Menu");
+        SceneManager.LoadScene("Main_Menu");
     }
 
     public void GamePlay_Scene()
     {
-        Application.LoadLevel("BikeStunt_Levels");
+        //Application.LoadLevel("BikeStunt_Levels");
+        SceneManager.LoadScene("BikeStunt_Levels");
     }
 
     public void Like_Us()
@@ -46,7 +49,8 @@ public class Scene_Manager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.LoadLevel("Main_Menu");
+            //Application.LoadLevel("Main_Menu");
+            SceneManager.LoadScene("Main_Menu");
         }
 
         if(MainManager.Instance.GameSounds == true)
