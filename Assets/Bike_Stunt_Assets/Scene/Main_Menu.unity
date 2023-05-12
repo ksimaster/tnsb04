@@ -42858,7 +42858,8 @@ MonoBehaviour:
   nameScene: Menu
   panelLoose: {fileID: 1474516513}
   panelWin: {fileID: 1474516513}
-  textCoin: {fileID: 544665977}
+  adsWinError: {fileID: 1474516513}
+  adsLoseError: {fileID: 1474516513}
   adsWinText: {fileID: 789353129}
   adsLoseText: {fileID: 789353129}
   restartWin: {fileID: 368990320}

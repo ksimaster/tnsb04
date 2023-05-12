@@ -49,6 +49,21 @@ mergeInto(LibraryManager.library, {
       stringToUTF8(isAd, bufferAd, bufferSizeAd);
       return bufferAd;
    },
+      // Function GetAdsWork (add ksimaster)
+   GetAdsWork: function () {
+      //var player;
+      var isWork = "no";
+        if ( isAdsWork === 'on') 
+        {
+          console.log('Ad work!' );
+          isWork = "yes";
+         }
+         isAdsWork = 'on';
+      var bufferSizeWork = lengthBytesUTF8(isWork) + 1;
+      var bufferWork = _malloc(bufferSizeWork);
+      stringToUTF8(isWork, bufferWork, bufferSizeWork);
+      return bufferWork;
+   },
       // Function GetTypeDevice(add ksimaster)
    GetTypeDevice: function () {
       //var player;

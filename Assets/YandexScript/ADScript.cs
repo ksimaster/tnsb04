@@ -15,7 +15,9 @@ public class ADScript : MonoBehaviour
     public GameObject panelLoose;
     public GameObject panelWin;
     //public GameObject panelReward;
-   // public Text textCoin;
+    // public Text textCoin;
+    public GameObject adsWinError;
+    public GameObject adsLoseError;
     public TMP_Text adsWinText;
     public TMP_Text adsLoseText;
     public Button restartWin;
@@ -43,6 +45,7 @@ public class ADScript : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
     	WebGLPluginJS.InterstitialFunction();
 #endif
+        CheckAdsWork();
         adsWinText.text = "";
         adsLoseText.text = "";
         restartWin.gameObject.SetActive(true);
@@ -108,6 +111,7 @@ public class ADScript : MonoBehaviour
     private void Update()
     {
         CheckAds();
+        //CheckAdsWork();
         //if (sliderHome.value <= sliderHome.minValue) ShowAdInterstitial();
         
         if ((panelLoose.activeSelf || panelWin.activeSelf) && i == 0) 
@@ -115,8 +119,8 @@ public class ADScript : MonoBehaviour
            // StartCoroutine("MicroPause");
             i+=1;
             ShowAdInterstitialLogPause();
-        } 
-        
+        }
+        if (panelWin.activeSelf) panelLoose.SetActive(false);
     }
     private void OnApplicationFocus(bool focus)
     {
@@ -153,6 +157,21 @@ public class ADScript : MonoBehaviour
         else
         {
             AudioListener.pause = false;
+        }
+#endif
+    }
+    public void CheckAdsWork()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        if(WebGLPluginJS.GetAdsWork() == "yes")
+        {
+            adsWinError.SetActive(false);
+            adsLoseError.SetActive(false);
+        }
+        else
+        {
+            adsWinError.SetActive(true);
+            adsLoseError.SetActive(true);
         }
 #endif
     }

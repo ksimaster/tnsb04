@@ -11,6 +11,7 @@
 <body>
   <script>
   	var isAds = 'off';
+    var isAdsWork = 'on';
     //add ksimaster
     function showAdInterstitial() {
       console.log('show Ad Interstitial');
@@ -19,10 +20,23 @@
         onClose: function(wasShown) {
           // some action after close
           isAds = 'off';
+          if(wasShown){
+            isAdsWork = 'on';
+          }
+          else
+          {
+            isAdsWork = 'off';
+          }
+          console.log('Параметр wasShown: ' + wasShown);
         },
-        onOpen: function() {
+        onOpen: function(wasShown) {
           // some action on open
           isAds = 'on';
+         // isAdsWork = 'on';
+        },
+        onError: function(error) {
+          // some action on error
+          isAdsWork = 'off';
         }
     }
 });
@@ -126,7 +140,7 @@
       {
           isDevice = 'desktop';
       }
-      console.log(sdk.deviceInfo.isDesktop());
+      //console.log(sdk.deviceInfo.isDesktop());
       showAdInterstitial();
       /*if (!(player.getMode() === 'lite')) 
         {

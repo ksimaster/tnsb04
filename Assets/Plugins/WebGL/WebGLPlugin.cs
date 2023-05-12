@@ -17,6 +17,9 @@ public static class WebGLPluginJS
     //Importing GetAdsOpen
     [DllImport("__Internal")]
     public static extern string GetAdsOpen();
+    //Importing GetAdsWork
+    [DllImport("__Internal")]
+    public static extern string GetAdsWork();
     //Importing GetTypeDevice
     [DllImport("__Internal")]
     public static extern string GetTypeDevice();
