@@ -9,8 +9,12 @@ public class AutoSwitchDevices : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("desktop", 0);
-        CheckDevice();
+        if (!PlayerPrefs.HasKey("desktop")) 
+        {
+            PlayerPrefs.SetInt("desktop", 0);
+            CheckDevice();
+        }
+
     }
 
     private void Update()

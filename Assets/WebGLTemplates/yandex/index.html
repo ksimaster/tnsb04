@@ -19,7 +19,8 @@
     callbacks: {
         onClose: function(wasShown) {
           // some action after close
-          isAds = 'off';
+         isAds = 'off';
+         /* 
           if(wasShown){
             isAdsWork = 'on';
           }
@@ -27,16 +28,12 @@
           {
             isAdsWork = 'off';
           }
-          console.log('Параметр wasShown: ' + wasShown);
+          console.log('Тип wasShown: ' + typeof(wasShown));*/
         },
         onOpen: function(wasShown) {
           // some action on open
           isAds = 'on';
          // isAdsWork = 'on';
-        },
-        onError: function(error) {
-          // some action on error
-          isAdsWork = 'off';
         }
     }
 });

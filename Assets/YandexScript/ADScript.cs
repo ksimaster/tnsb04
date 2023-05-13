@@ -24,7 +24,7 @@ public class ADScript : MonoBehaviour
     public Button nextWin;
     public Button restartLose;
     public Button outScene;
-    private int coin;
+    //private int coin;
     private int i;
 
     IEnumerator Pause()
@@ -33,19 +33,19 @@ public class ADScript : MonoBehaviour
         nextWin.gameObject.SetActive(false);
         restartLose.gameObject.SetActive(false);
         outScene.gameObject.SetActive(false);
-        adsWinText.text = "Реклама начнется через 3 секунды";
-        adsLoseText.text = "Реклама начнется через 3 секунды";
+        adsWinText.text = "Реклама может начаться через 3 секунды";
+        adsLoseText.text = "Реклама может начаться через 3 секунды";
         yield return new WaitForSeconds(1f);
-        adsWinText.text = "Реклама начнется через 2 секунды";
-        adsLoseText.text = "Реклама начнется через 2 секунды";
+        adsWinText.text = "Реклама может начаться через 2 секунды";
+        adsLoseText.text = "Реклама может начаться через 2 секунды";
         yield return new WaitForSeconds(1f);
-        adsWinText.text = "Реклама начнется через 1 секунду";
-        adsLoseText.text = "Реклама начнется через 1 секунду";
+        adsWinText.text = "Реклама может начаться через 1 секунду";
+        adsLoseText.text = "Реклама может начаться через 1 секунду";
         yield return new WaitForSeconds(1f);
 #if UNITY_WEBGL && !UNITY_EDITOR
     	WebGLPluginJS.InterstitialFunction();
 #endif
-        CheckAdsWork();
+        //CheckAdsWork();
         adsWinText.text = "";
         adsLoseText.text = "";
         restartWin.gameObject.SetActive(true);
@@ -160,6 +160,7 @@ public class ADScript : MonoBehaviour
         }
 #endif
     }
+    /*
     public void CheckAdsWork()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -175,4 +176,5 @@ public class ADScript : MonoBehaviour
         }
 #endif
     }
+    */
 }
