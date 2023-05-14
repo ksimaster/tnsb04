@@ -24,7 +24,15 @@ public class TweenWork : MonoBehaviour
         if (other.gameObject.CompareTag("Player")&&!intrig)
         {
             intrig = true;
-            tweenObj.GetComponent<DOTweenAnimation>().DORestart();
+            if (tweenObj != null)
+            {
+                var animation = tweenObj.GetComponent<DOTweenAnimation>();
+                if (animation != null)
+                {
+                    animation.DORestart();
+                }
+            }
+            
         }
     }
 
