@@ -33,21 +33,24 @@ public class ADScript : MonoBehaviour
         nextWin.gameObject.SetActive(false);
         restartLose.gameObject.SetActive(false);
         outScene.gameObject.SetActive(false);
-        adsWinText.text = "Реклама может начаться через 3 секунды";
-        adsLoseText.text = "Реклама может начаться через 3 секунды";
+        adsWinText.text = "Отлично! Подготовим следующую трассу к заезду!";
+        adsLoseText.text = "Сейчас починим и можно попробовать ещё раз!";
+        yield return new WaitForSeconds(0.5f);
+        adsWinText.text = "Отлично! Подготовим следующую трассу к заезду!";
+        adsLoseText.text = "Сейчас починим и можно попробовать ещё раз!";
         yield return new WaitForSeconds(1f);
-        adsWinText.text = "Реклама может начаться через 2 секунды";
-        adsLoseText.text = "Реклама может начаться через 2 секунды";
+        adsWinText.text = "Отлично! Подготовим следующую трассу к заезду!";
+        adsLoseText.text = "Сейчас починим и можно попробовать ещё раз!";
         yield return new WaitForSeconds(1f);
-        adsWinText.text = "Реклама может начаться через 1 секунду";
-        adsLoseText.text = "Реклама может начаться через 1 секунду";
+        adsWinText.text = "Трасса готова! Можно ехать!";
+        adsLoseText.text = "Всё готово! Можно ехать!";
         yield return new WaitForSeconds(1f);
 #if UNITY_WEBGL && !UNITY_EDITOR
     	WebGLPluginJS.InterstitialFunction();
 #endif
         //CheckAdsWork();
-        adsWinText.text = "";
-        adsLoseText.text = "";
+       // adsWinText.text = "";
+        //adsLoseText.text = "";
         restartWin.gameObject.SetActive(true);
         nextWin.gameObject.SetActive(true);
         restartLose.gameObject.SetActive(true);
