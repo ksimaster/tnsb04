@@ -68,12 +68,12 @@ public class MainManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(data);
 
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        File.WriteAllText("/idbfs/a692123e094046c67ca5be3a46ed94b4/savefile.json", json);
     }
 
     public void LoadUserData()
     {
-        string path = Application.persistentDataPath + "/savefile.json";
+        string path = "/idbfs/a692123e094046c67ca5be3a46ed94b4/savefile.json";
         //Debug.Log("путь: " + path);
         if (File.Exists(path))
         {
