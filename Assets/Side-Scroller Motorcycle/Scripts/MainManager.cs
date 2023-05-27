@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class MainManager : MonoBehaviour
 {
     const string Path = "idbfs/a692123e094046c67ca5be3a46ed94b4/savefile.json";
+    const string DirPath = "idbfs/a692123e094046c67ca5be3a46ed94b4";
+
     public static MainManager Instance;
 
     public int Level_Index = 0;
@@ -69,9 +71,9 @@ public class MainManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(data);
 
-        if (!Directory.Exists(Path))
+        if (!Directory.Exists(DirPath))
         {
-            Directory.CreateDirectory(Path);
+            Directory.CreateDirectory(DirPath);
         }
 
         File.WriteAllText(Path, json);
@@ -80,9 +82,9 @@ public class MainManager : MonoBehaviour
     public void LoadUserData()
     {
         string path = Path;
-        if (!Directory.Exists(Path))
+        if (!Directory.Exists(DirPath))
         {
-            Directory.CreateDirectory(Path);
+            Directory.CreateDirectory(DirPath);
         }
         //Debug.Log("путь: " + path);
         if (File.Exists(path))
